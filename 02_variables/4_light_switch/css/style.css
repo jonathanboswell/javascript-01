@@ -1,0 +1,26 @@
+body {
+    padding: 20px;
+    text-align: center;
+    background-color: black;
+}
+body.light, body.blue {
+    background-size: 400px auto;
+    background-color: white;
+}
+body.blue {
+    background-color: blue;
+}
+body.dark {
+    background: url('../images/dark.png') top right no-repeat no-repeat black;
+}
+
+#lightSwitch {
+    cursor: pointer;
+    height: 200px;
+    margin-top: 100px;
+}
+#wallplate {
+    background: url('../images/wallplate.png') top center no-repeat no-repeat;
+    background-position: cover;
+    height: 600px;
+}

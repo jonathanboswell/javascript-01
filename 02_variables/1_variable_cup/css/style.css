@@ -1,0 +1,26 @@
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+     color: #000;
+     font-size: 18px;
+     line-height: 1.4;
+     font-family: Helvetica, Arial, sans-serif;
+     background: url('../images/table.jpg') no-repeat;
+     background-size: cover;
+     margin-top: 20px;
+}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+#cup {
+    margin-top: 100px;
+    margin-left: 50px;
+    height: 500px;
+    max-width: 500px;
+    background: url('../images/cup.png') no-repeat;
+    background-size: contain;
+}
