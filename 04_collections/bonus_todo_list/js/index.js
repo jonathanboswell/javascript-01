@@ -1,45 +1,33 @@
-// *** VARIABLES *** //
+// Global Variables
+var tasks = ["Wake-up","Eat breakfast","Shower","Get dressed"];
 
-var dailyTodos = ["Wake-up","Eat breakfast","Shower","Get dressed"];
-var item;
+// Add items when the page loads
+for(index in tasks) {
+    var task = tasks[index];
+    addItemToDom(task)
+}
 
-
-// *** EVENT LISTENERS *** //
-
-$('#addButton').on('click', function(){
-    //Get the value from the DOM and reassign it to item
-    item = $('#todo').val(); 
-
-    //Pass item to the addItem function
-    addItem(item);
-
-    //Reset the DOM value to be empty
-    $('#todo').val("");
-});
-
+// Event Listeners
+$('#addButton').on('click', addItem);
 $('#todos').on('click', '.btn-primary', function(){
     $(this).parent().remove(); //Remove the list-group-item from the DOM
 });
 
-// *** FUNCTIONS *** //
-function addItem(value)
+// Function Definitions
+function addItem()
 {
-    if(value==="fall" || value=="")
-    {
-        console.log("NOPE");
-    } else {
-        var output = "";
-        output += '<li class="list-group-item">';
-        output += '<button class="btn btn-primary">X</button> ';
-        output += value;
-        output += '</li>';
-
-        $('#todos').append(output);
-    }
+    var item = $('#todo').val(); 
+    addItemToDom(item);
+    $('#todo').val("");
 }
 
-// *** ON PAGE LOAD *** //
-for(var i = 0; i < dailyTodos.length; i++)
+function addItemToDom(value)
 {
-    addItem(dailyTodos[i]);
+    var output = "";
+    output += '<li class="list-group-item">';
+    output += '<button class="btn btn-primary">X</button> ';
+    output += value;
+    output += '</li>';
+
+    $('#todos').append(output);
 }
