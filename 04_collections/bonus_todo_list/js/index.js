@@ -1,52 +1,45 @@
-// Global Variables
-var songs = [
-  {
-    title: 'Titanium',
-    artist: 'David Guetta & Sia'
-  },
-  {
-    title: 'Insane',
-    artist: 'Flume'
-  },
-  {
-    title: 'All That I Had',
-    artist: 'Mt. Eden'
-  }
-];
+// *** VARIABLES *** //
 
-// Add items when the page loads
-for(index in songs) {
-    var song = songs[index];
-    addItemToDom(song);
-}
+var dailyTodos = ["Wake-up","Eat breakfast","Shower","Get dressed"];
+var item;
 
-// Event Listeners
+
+// *** EVENT LISTENERS *** //
+
 $('#addButton').on('click', function(){
-  var item = {
-    title: "",
-    artist: "",
-    year: ""
-  };
-  for(key in item)
-  {
-    item[key] = $("#" + key).val();
-    $('#' + key).val("");
-  }
-  addItemToDom(item);
+    //Get the value from the DOM and reassign it to item
+    item = $('#todo').val(); 
+
+    //Pass item to the addItem function
+    addItem(item);
+
+    //Reset the DOM value to be empty
+    $('#todo').val("");
 });
 
-$('#songs').on('click', '.btn-primary', function(){
+$('#todos').on('click', '.btn-primary', function(){
     $(this).parent().remove(); //Remove the list-group-item from the DOM
 });
 
-// Function Definitions
-function addItemToDom(song)
+// *** FUNCTIONS *** //
+function addItem(value)
 {
-    var output = "";
-    output += '<li class="list-group-item">';
-    output += '<button class="btn btn-primary">X</button> ';
-    output += song.title + " by " + song.artist;
-    output += '</li>';
+    if(value==="fall" || value=="")
+    {
+        console.log("NOPE");
+    } else {
+        var output = "";
+        output += '<li class="list-group-item">';
+        output += '<button class="btn btn-primary">X</button> ';
+        output += value;
+        output += '</li>';
 
-    $('#songs').append(output);
+        $('#todos').append(output);
+    }
+}
+
+// *** ON PAGE LOAD *** //
+for(var i = 0; i < dailyTodos.length; i++)
+{
+    addItem(dailyTodos[i]);
 }
