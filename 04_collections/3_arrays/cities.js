@@ -1,4 +1,16 @@
-// Declare a variable and assign it the value of an empty array
-var cities = [];
+var friends = [
+  {name:'Luca'},
+  'Jenna',
+  'Tom',
+  'Michelle'
+];
 
-console.log(cities);
+for(index in friends)
+{
+  var friend = friends[index];
+  if(typeof(friend)=='object'){
+    console.log(friend.name);
+  } else {
+    console.log(friend);
+  }
+}

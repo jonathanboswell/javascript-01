@@ -1,33 +1,52 @@
 // Global Variables
-var tasks = ["Wake-up","Eat breakfast","Shower","Get dressed"];
+var songs = [
+  {
+    title: 'Titanium',
+    artist: 'David Guetta & Sia'
+  },
+  {
+    title: 'Insane',
+    artist: 'Flume'
+  },
+  {
+    title: 'All That I Had',
+    artist: 'Mt. Eden'
+  }
+];
 
 // Add items when the page loads
-for(index in tasks) {
-    var task = tasks[index];
-    addItemToDom(task)
+for(index in songs) {
+    var song = songs[index];
+    addItemToDom(song);
 }
 
 // Event Listeners
-$('#addButton').on('click', addItem);
-$('#todos').on('click', '.btn-primary', function(){
+$('#addButton').on('click', function(){
+  var item = {
+    title: "",
+    artist: "",
+    year: ""
+  };
+  for(key in item)
+  {
+    item[key] = $("#" + key).val();
+    $('#' + key).val("");
+  }
+  addItemToDom(item);
+});
+
+$('#songs').on('click', '.btn-primary', function(){
     $(this).parent().remove(); //Remove the list-group-item from the DOM
 });
 
 // Function Definitions
-function addItem()
-{
-    var item = $('#todo').val(); 
-    addItemToDom(item);
-    $('#todo').val("");
-}
-
-function addItemToDom(value)
+function addItemToDom(song)
 {
     var output = "";
     output += '<li class="list-group-item">';
     output += '<button class="btn btn-primary">X</button> ';
-    output += value;
+    output += song.title + " by " + song.artist;
     output += '</li>';
 
-    $('#todos').append(output);
+    $('#songs').append(output);
 }

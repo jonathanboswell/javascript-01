@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="Chatbot">
+  <meta name="author" content="Jonathan Boswell">
+
+  <title>Chatbot</title>
+
+  <!-- Google Fonts & Font Awesome-->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- Custom styles for this template -->
+  <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-xs-6 col-xs-offset-3">
+              <div class="panel panel-primary">
+                  <div class="panel-heading">
+                      <span class="glyphicon glyphicon-comment"></span> Chat
+                      <div class="btn-group pull-right">
+                          <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                              <span class="glyphicon glyphicon-chevron-down"></span>
+                          </button>
+                          <ul class="dropdown-menu slidedown">
+                              <!-- font awesome is better -->
+                              <li><a href="#"><i class="fa fa-sync-alt"></i> Refresh</a></li>
+
+                              <!-- update these -->
+                              <li><a href="#"><span class="glyphicon glyphicon-ok-sign"></span>Available</a></li>
+                              <li><a href="#"><span class="glyphicon glyphicon-remove"></span> Busy</a></li>
+                              <li><a href="#"><span class="glyphicon glyphicon-time"></span> Away</a></li>
+                              <li class="divider"></li>
+                              <li><a href="#"><span class="glyphicon glyphicon-off"></span> Sign Out</a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="panel-body">
+                      <ul class="chat">
+
+                      </ul>
+                  </div>
+                  <div class="panel-footer">
+                      <div class="input-group">
+                          <input id="chat-message" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+                          <span class="input-group-btn">
+                              <button class="btn btn-warning btn-sm" id="chat-send">Send</button>
+                          </span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/index.js"></script>
+
+</body>
+</html>

@@ -1,12 +1,15 @@
-//Define a global variable
-var clothes = "Pajamas";
-
-//Define a function
-function changeClothes()
+var a = 0;
+var b = 4;
+var c = 10;
+function doMath(a,b)
 {
-    //Define a local variable
-    var clothes = "Jeans and t-shirt";
+  var b = 2;
+  return function(){
+    a = 0;
+    b = 7;
+    return a + b + c;
+  }();
 }
-
-
-console.log("What am I wearing? " + clothes);
+c = 5;
+a = doMath(a,b);
+console.log(a);
