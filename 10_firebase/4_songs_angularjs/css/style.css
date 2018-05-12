@@ -1,0 +1,21 @@
+body {
+  background: url('../images/band.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: #000;
+}
+ul {
+  padding:0;
+}
+.container {
+  padding-top: 50px;
+}
+.fa {
+  cursor: pointer;
+  padding-left: 3px;
+}
+a {
+  cursor: pointer;
+}

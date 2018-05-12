@@ -1,0 +1,17 @@
+<menubar ng-if="!navbar.isLoggedIn"></menubar>
+<navbar ng-if="navbar.isLoggedIn"></navbar>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-3 p-3">
+      <button ng-if="!navbar.isLoggedIn" class="btn btn-success" ng-click="navbar.login()">Login</button>
+      <button ng-if="navbar.isLoggedIn" class="btn btn-danger" ng-click="navbar.logout()">Logout</button>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <ui-view></ui-view>
+    </div>
+  </div>
+</div>

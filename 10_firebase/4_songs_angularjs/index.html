@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Fan Page</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Internal CSS -->
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header text-danger">
+        <h1>Band Fan Page</h1>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container" ng-controller="SongsController">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+
+            <!-- ADD -->
+            <div ng-if="!editing" class="panel-group">
+              <div class="panel panel-primary">
+                <div class="panel-heading">Add a song</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                      <label>Song:</label>
+                      <textarea ng-model="song.title" class="form-control"></textarea>
+                    </div>
+                    <button ng-click="addSong()" class="btn btn-success">Add Song</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- EDIT -->
+            <div ng-if="editing" class="panel-group">
+              <div class="panel panel-primary">
+                <div class="panel-heading">Edit a song</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                      <label>Song:</label>
+                      <textarea ng-model="song.title" class="form-control"></textarea>
+                    </div>
+                    <button ng-click="update()" class="btn btn-success">Save Song</button>
+                    <button ng-click="cancel()" class="btn btn-danger">Cancel</button>
+                </div>
+              </div>
+            </div>
+
+        </div>
+        <div class="col-xs-12 col-sm-6">
+
+            <div class="panel-group">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  {{band}} Songs
+                </div>
+                <div class="panel-body">
+                  <ul id="song-list" class="list-item-group">
+                    <li ng-repeat="(key,song) in songs" data-id="{{key}}" class="list-group-item" >
+                      <a ng-click="edit(key, song)">{{song.title}}</a>
+                      <i ng-click="delete(key)" class="fa fa-trash pull-right"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+        </div>
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/index.js"></script>
+</html>
