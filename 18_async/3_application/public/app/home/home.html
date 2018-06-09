@@ -1,0 +1,46 @@
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-7 col-offset-1">
+
+                <!-- FORM FOR ADDRESS LOOKUP -->
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        Address Lookup Form
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <input ng-model="address" class="form-control" type="text" placeholder="Enter an address">
+                        </div>
+                        <div class="form-group">
+                            <div id="formattedAddress"></div>
+                            <button ng-click="lookup()" class="btn btn-info pull-right" id="lookup">
+                                <i class="fa fa-search"></i> Lookup
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-3">
+
+                <!-- SHOW LAT & LONG -->
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        Latitude & Longitude
+                    </div>
+                    <div class="card-body">
+                        <p>Latitude: {{lat || 'n/a'}}</p>
+                        <p>Longitude: {{lng || 'n/a'}}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+
+                <!-- RAW JSON RESPONSE -->
+                <pre>{{output || "Response object will show here"}}</pre>
+            </div>
+        </div>
+    </div>
